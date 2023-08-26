@@ -11,15 +11,31 @@ app.use('/images', express.static(__dirname + '/public/images'));
 app.use('/fonts', express.static(__dirname + '/public/fonts'));
 
 // Set template Engine
+app.use(expresslayouts)
+app.set('layout', 'layouts/layout')
 app.set('view engine', 'ejs');
-// app.use(expresslayouts)
-app.set("layout", "layout");
-
 
 // Navigation
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', {title: 'Home | Esquire Soya'});
 });
+
+app.get('/contact-us', (req, res) => {
+    res.render('contact-us');
+});
+
+app.get('/login', (req, res) => {
+    res.render('login');
+});
+
+app.get('/404', (req, res) => {
+    res.render('404');
+});
+
+app.get('/register', (req, res) => {
+    res.render('register');
+});
+
 
 // Start the server
 app.listen(port, () => {
