@@ -16,25 +16,10 @@ app.set('layout', 'layouts/layout')
 app.set('view engine', 'ejs');
 
 // Navigation
-app.get('/', (req, res) => {
-    res.render('index', {title: 'Home | Esquire Soya'});
-});
+const routes = require('./routes/routes');
 
-app.get('/contact-us', (req, res) => {
-    res.render('contact-us');
-});
-
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-
-app.get('/404', (req, res) => {
-    res.render('404');
-});
-
-app.get('/register', (req, res) => {
-    res.render('register');
-});
+// use routes
+app.use('/', routes);
 
 
 // Start the server
