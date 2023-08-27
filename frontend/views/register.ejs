@@ -66,11 +66,11 @@
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="404.html"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="404.html"><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="404.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="404.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="404.html"><i class="fa fa-lock"></i> Login</a></li>
+								<li><a href="404"><i class="fa fa-user"></i> Account</a></li>
+								<li><a href="404"><i class="fa fa-star"></i> Wishlist</a></li>
+								<li><a href="404"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+								<li><a href="cart"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="login"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
 					</div>
@@ -95,15 +95,15 @@
 								<li><a href="#" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="404.html">Products</a></li>
-										<li><a href="404.html">Product Details</a></li> 
-										<li><a href="404.html">Checkout</a></li> 
-										<li><a href="404.html">Cart</a></li> 
-										<li><a href="404.html">Login</a></li> 
+                                        <li><a href="404">Products</a></li>
+										<li><a href="404">Product Details</a></li> 
+										<li><a href="404">Checkout</a></li> 
+										<li><a href="cart">Cart</a></li> 
+										<li><a href="login">Login</a></li> 
                                     </ul>
                                 </li> 
 								<li><a href="404.html">404</a></li>
-								<li><a href="contact-us.html">Contact</a></li>
+								<li><a href="contact-us">Contact</a></li>
 							</ul>
 						</div>
 					</div>
@@ -116,22 +116,22 @@
 			</div>
 		</div>
 	</header>
-	
+
 	<section id="form">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-4">
-					<div class="signup-form">
-						<h2>New User Signup!</h2>
-						<form action="#">
-							<input type="text" placeholder="Name"/>
-							<input type="email" placeholder="Email Address"/>
-							<input type="password" placeholder="Password"/>
-							<button type="submit" class="btn btn-default">Signup</button>
-						</form>
-					</div>
-				</div>
+		  <div class="row">
+			<div class="col-sm-4">
+			  <div class="signup-form">
+				<h2>New User Signup!</h2>
+				<form id="registrationForm"> 
+				  <input type="text" id="name" placeholder="Name"/> 
+				  <input type="email" id="email" placeholder="Email Address"/>
+				  <input type="password" id="password" placeholder="Password"/>
+				  <button type="submit" class="btn btn-default">Signup</button>
+				</form>
+			  </div>
 			</div>
+		  </div>
 		</div>
 	</section>
 	
@@ -297,5 +297,36 @@
 	<script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.prettyPhoto.js"></script>
     <script src="js/main.js"></script>
+	<script>
+		document.getElementById("registrationForm").addEventListener("submit", async (e) => {
+		  e.preventDefault();
+		  
+		  const name = document.getElementById("name").value; // Get name input value
+		  const email = document.getElementById("email").value; // Get email input value
+		  const password = document.getElementById("password").value; // Get password input value
+		
+		  const userData = {
+			username: name, // Assuming the backend expects "username"
+			email,
+			password,
+		  };
+		
+		  try {
+			const response = await fetch("http://localhost:3000/api/auth/register", {
+			  method: "POST",
+			  headers: {
+				"Content-Type": "application/json",
+			  },
+			  body: JSON.stringify(userData),
+			});
+		
+			const data = await response.json();
+			console.log("User registered:", data);
+			window.location.href = "login";
+		  } catch (error) {
+			console.error("Error registering user:", error);
+		  }
+		});
+	</script>
 </body>
 </html>
