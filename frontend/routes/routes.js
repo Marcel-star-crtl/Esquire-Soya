@@ -25,4 +25,8 @@ router.get('/cart', (req, res) => {
     res.render('cart', {title: 'cart | Esquire Soya'});
 });
 
+router.get('/product-details', (req, res) => {
+    res.render('product-details', {title: 'product-details | Esquire Soya'});
+});
+
 module.exports = router;

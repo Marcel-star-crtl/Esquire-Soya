@@ -303,34 +303,35 @@
     <script src="js/main.js"></script>
 	<script>
 		document.getElementById("loginForm").addEventListener("submit", async (e) => {
-		  e.preventDefault();
+			e.preventDefault();
 	  
-		  const email = document.getElementById("loginEmail").value;
-		  const password = document.getElementById("loginPassword").value;
+			const email = document.getElementById("loginEmail").value;
+			const password = document.getElementById("loginPassword").value;
+		
+			const userData = {
+				email,
+				password,
+			};
 	  
-		  const userData = {
-			email,
-			password,
-		  };
-	  
-		  try {
+		try {
 			const response = await fetch("http://localhost:3000/api/auth/login", {
-			  method: "POST",
-			  headers: {
-				"Content-Type": "application/json",
-			  },
-			  body: JSON.stringify(userData),
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(userData),
 			});
 	  
 			const data = await response.json();
 	  
 			if (response.status === 200) {
-			  console.log("Login successful:", data);
-			  window.location.href = "/";
+				localStorage.setItem("token", data.accessToken);
+				console.log("Login successful:", data);
+				window.location.href = "/";
 			} else {
-			  console.error("Login failed:", data.message);
+			  	console.error("Login failed:", data.message);
 			}
-		  } catch (error) {
+		} catch (error) {
 			console.error("Error logging in:", error);
 		  }
 		});
