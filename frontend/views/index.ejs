@@ -120,7 +120,130 @@
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-9">
+				<div class="col-sm-3">
+					<div class="right-sidebar">
+						<h2>Category</h2>
+						<div class="panel-group category-products" id="accordian">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#chicken">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Chicken
+										</a>
+									</h4>
+								</div>
+								<div id="chicken" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Contri foul </a></li>
+											<li><a href="#">Agric Foul </a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#beef">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Beef
+										</a>
+									</h4>
+								</div>
+								<div id="beef" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">beef</a></li>
+											<li><a href="#">beef</a></li>
+											<li><a href="#">beef</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordian" href="#lamb">
+											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
+											Lamb
+										</a>
+									</h4>
+								</div>
+								<div id="lamb" class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul>
+											<li><a href="#">Lamb1</a></li>
+											<li><a href="#">lamb2</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Turkey</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Duck</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Goat</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Rabbit</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Game Meat</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Kangaroo</a></h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Buffalo/Bison</a></h4>
+								</div>
+							</div>
+						</div>
+					
+						<div class="brands_products">
+							<h2>Parts</h2>
+							<div class="brands-name">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="#"> <span class="pull-right">(50)</span>available</a></li>
+									<li><a href="#"> <span class="pull-right">(56)</span>available</a></li>
+									<li><a href="#"> <span class="pull-right">(27)</span>available</a></li>
+									<li><a href="#"> <span class="pull-right">(32)</span>available</a></li>
+									<li><a href="#"> <span class="pull-right">(5)</span>available</a></li>
+									<li><a href="#"> <span class="pull-right">(9)</span>available</a></li>
+									<li><a href="#"> <span class="pull-right">(4)</span>available</a></li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="price-range">
+							<h2>Price Range</h2>
+							<div class="well text-center">
+								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
+								 <b class="pull-left">0</b> <b class="pull-right">1000</b>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+
 					<div class="features_items">
 						<h2 class="title text-center">Features Items</h2>
 						<div class="col-sm-4">
@@ -281,129 +404,366 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				
-				<div class="col-sm-3 padding-right">
-					<div class="right-sidebar">
-						<h2>Category</h2>
-						<div class="panel-group category-products" id="accordian">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#chicken">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Chicken
-										</a>
-									</h4>
-								</div>
-								<div id="chicken" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Contri foul </a></li>
-											<li><a href="#">Agric Foul </a></li>
-										</ul>
+					<div class="category-tab">
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#kangaroo" data-toggle="tab">Kangaroo</a></li>
+								<li><a href="#chicken" data-toggle="tab">Chicken</a></li>
+								<li><a href="#rabbit" data-toggle="tab">Rabbit</a></li>
+								<li><a href="#turkey" data-toggle="tab">Turkey</a></li>
+								<li><a href="#goat" data-toggle="tab">Goat</a></li>
+							</ul>
+						</div>
+						<div class="tab-content">
+							<div class="tab-pane fade active in" id="kangaroo" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#beef">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Beef
-										</a>
-									</h4>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div id="beef" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">beef</a></li>
-											<li><a href="#">beef</a></li>
-											<li><a href="#">beef</a></li>
-										</ul>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title">
-										<a data-toggle="collapse" data-parent="#accordian" href="#lamb">
-											<span class="badge pull-right"><i class="fa fa-plus"></i></span>
-											Lamb
-										</a>
-									</h4>
+							<div class="tab-pane fade" id="chicken" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
 								</div>
-								<div id="lamb" class="panel-collapse collapse">
-									<div class="panel-body">
-										<ul>
-											<li><a href="#">Lamb1</a></li>
-											<li><a href="#">lamb2</a></li>
-										</ul>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Turkey</a></h4>
+							
+							<div class="tab-pane fade" id="rabbit" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Duck</a></h4>
+							
+							<div class="tab-pane fade" id="turkey" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Goat</a></h4>
+							
+							<div class="tab-pane fade" id="goat" >
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Rabbit</a></h4>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Game Meat</a></h4>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Kangaroo</a></h4>
+								<div class="col-sm-3">
+									<div class="product-image-wrapper">
+										<div class="single-products">
+											<div class="productinfo text-center">
+												<img src="images/home/9.png" alt="" />
+												<h2>200 FCFA</h2>
+												<p>Flavorful African Grilled Delights</p>
+												<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+											</div>
+										</div>
+									</div>
 								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Buffalo/Bison</a></h4>
-								</div>
-							</div>
-						</div>
-					
-						<div class="brands_products">
-							<h2>Parts</h2>
-							<div class="brands-name">
-								<ul class="nav nav-pills nav-stacked">
-									<li><a href="#"> <span class="pull-right">(50)</span>available</a></li>
-									<li><a href="#"> <span class="pull-right">(56)</span>available</a></li>
-									<li><a href="#"> <span class="pull-right">(27)</span>available</a></li>
-									<li><a href="#"> <span class="pull-right">(32)</span>available</a></li>
-									<li><a href="#"> <span class="pull-right">(5)</span>available</a></li>
-									<li><a href="#"> <span class="pull-right">(9)</span>available</a></li>
-									<li><a href="#"> <span class="pull-right">(4)</span>available</a></li>
-								</ul>
-							</div>
-						</div>
-						
-						<div class="price-range">
-							<h2>Price Range</h2>
-							<div class="well text-center">
-								 <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2" ><br />
-								 <b class="pull-left">0</b> <b class="pull-right">1000</b>
 							</div>
 						</div>
 					</div>
+					
+					<div class="recommended_items">
+						<h2 class="title text-center">recommended items</h2>
+						
+						<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+							<div class="carousel-inner">
+								<div class="item active">	
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/9.png" alt="" />
+													<h2>200 FCFA</h2>
+													<p>Flavorful African Grilled Delights</p>
+													<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/9.png" alt="" />
+													<h2>200 FCFA</h2>
+													<p>Flavorful African Grilled Delights</p>
+													<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/9.png" alt="" />
+													<h2>200 FCFA</h2>
+													<p>Flavorful African Grilled Delights</p>
+													<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="item">	
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/9.png" alt="" />
+													<h2>200 FCFA</h2>
+													<p>Flavorful African Grilled Delights</p>
+													<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/9.png" alt="" />
+													<h2>200 FCFA</h2>
+													<p>Flavorful African Grilled Delights</p>
+													<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="product-image-wrapper">
+											<div class="single-products">
+												<div class="productinfo text-center">
+													<img src="images/home/9.png" alt="" />
+													<h2>200 FCFA</h2>
+													<p>Flavorful African Grilled Delights</p>
+													<a href="#" class="btn btn-default add-to-cart" data-product-id="131"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							 <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+								<i class="fa fa-angle-left"></i>
+							  </a>
+							  <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+								<i class="fa fa-angle-right"></i>
+							  </a>			
+						</div>
+					</div>
 				</div>
+				
 			</div>
 		</div>
 	</section>
