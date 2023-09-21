@@ -9,6 +9,7 @@ const cartRoute = require("./routes/cart");
 const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
+const Product = require("./models/Product");
 
 dotenv.config();
 
@@ -28,6 +29,22 @@ app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/checkout", stripeRoute);
 
+app.get("/search/:key", async (req, res) => {
+  try{
+    const data = await Product.find({
+      "$or": [
+        {name: {$regex: req.params.key, $options: "i"}},
+        {categories:{$regex: req.params.key, $options: "i"}}
+      ]
+    }); 
+    res.send(data);
+  }catch( error ) {
+    console.error(error);
+    
+    res.status(500).json({ error: "An error occurred while searching "})
+  }
+  
+});
 
 
 app.get("/", (req, res) => {
