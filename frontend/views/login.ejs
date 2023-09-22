@@ -325,8 +325,9 @@
 	  
 			if (response.status === 200) {
 				localStorage.setItem("token", data.accessToken);
+				localStorage.setItem("userId", data._id);
 				console.log("Login successful:", data);
-				window.location.href = "/";
+				// window.location.href = "/";
 			} else {
 			  	console.error("Login failed:", data.message);
 			}
