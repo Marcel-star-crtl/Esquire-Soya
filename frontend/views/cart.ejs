@@ -372,7 +372,6 @@
 		
 	</footer>
 	
-
   
     <script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -381,112 +380,26 @@
     <script src="js/main.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            // // Function to update cart item total and overall total
-            // function updateCartItemTotal() {
-            //     var cartRows = $('.cart_row');
-            //     var cartTotal = 0;
-    
-            //     cartRows.each(function () {
-            //         var row = $(this);
-            //         var pricePerItem = parseFloat(row.find('.cart_price').text().replace(' FCFA', ''));
-            //         var quantity = parseInt(row.find('.cart_quantity_input').val());
-            //         var total = pricePerItem * quantity;
-            //         row.find('.cart_total_price').text(total + ' FCFA');
-            //         cartTotal += total;
-            //     });
-    
-            //     $('#cart_total').text(cartTotal + ' FCFA');
-            // }
-    
-            // // Function to populate the cart with data from the server
-			// // function populateCart(userId, token) {
-			// // 	// Make a Fetch API request to fetch the user's cart data
-			// // 	fetch(`http://localhost:3000/api/carts/find/${userId}`, {
-			// // 		headers: {
-			// // 			Authorization: `Bearer ${token}`
-			// // 		}
-			// // 	})
-			// // 		.then(function (response) {
-			// // 			if (!response.ok) {
-			// // 				throw new Error('Network response was not ok');
-			// // 			}
-			// // 			return response.json();
-			// // 		})
-			// // 		.then(function (data) {
-			// // 			// ...
-			// // 		})
-			// // 		.catch(function (error) {
-			// // 			console.error('Error fetching cart data:', error);
-			// // 		});
-			// // }
-
-			// // Function to populate the cart with data from the server
-			// function populateCart(userId, token) {
-			// 	// Make a Fetch API request to fetch the user's cart data
-			// 	fetch(`http://localhost:3000/api/carts/find/${userId}`, {
-			// 		headers: {
-			// 			Authorization: `Bearer ${token}`
-			// 		}
-			// 	})
-			// 	.then(function (response) {
-			// 		if (!response.ok) {
-			// 			throw new Error('Network response was not ok');
-			// 		}
-			// 		return response.json();
-			// 	})
-			// 	.then(function (data) {
-			// 		// Check if data and cartItems exist
-			// 		if (data && data.cartItems) {
-			// 			// Clear the existing cart items
-			// 			$('.cart_row').remove();
-
-			// 			// Loop through the retrieved data and add each product to the cart table
-			// 			data.cartItems.forEach(function (item) {
-			// 				var newRow = $('<tr class="cart_row" data-product-id="' + item.productId + '">');
-			// 				newRow.html(
-			// 					'<td class="cart_product">' +
-			// 					'<a href=""><img src="' + item.imageURL + '" alt=""></a>' +
-			// 					'</td>' +
-			// 					'<td class="cart_description">' +
-			// 					'<h4><a href="">' + item.productName + '</a></h4>' +
-			// 					'<p>Part-' + item.productPart + ' ID: ' + item.productId + '</p>' +
-			// 					'</td>' +
-			// 					'<td class="cart_price">' +
-			// 					'<p>' + item.price + ' FCFA</p>' +
-			// 					'</td>' +
-			// 					'<td class="cart_quantity">' +
-			// 					'<div class="cart_quantity_button">' +
-			// 					'<a class="cart_quantity_up" href=""> + </a>' +
-			// 					'<input class="cart_quantity_input" type="text" name="quantity" value="' + item.quantity + '" autocomplete="off" size="2">' +
-			// 					'<a class="cart_quantity_down" href=""> - </a>' +
-			// 					'</div>' +
-			// 					'</td>' +
-			// 					'<td class="cart_total">' +
-			// 					'<p class="cart_total_price">' + (item.price * item.quantity) + ' FCFA</p>' +
-			// 					'</td>' +
-			// 					'<td class="cart_delete">' +
-			// 					'<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>' +
-			// 					'</td>'
-			// 				);
-			// 				$('.cart_info table tbody').append(newRow);
-			// 			});
-
-			// 			// Update cart item totals
-			// 			updateCartItemTotal();
-			// 		} else {
-			// 			// Handle the case where data or cartItems is missing or empty
-			// 			console.error('Invalid or empty cart data:', data);
-			// 		}
-			// 	})
-			// 	.catch(function (error) {
-			// 		console.error('Error fetching cart data:', error);
-			// 	});
-			// }
-
+		$(document).ready(function () {
+			// Function to update cart item total and overall total
+			function updateCartItemTotal() {
+				var cartRows = $('.cart_row');
+				var cartTotal = 0;
+	
+				cartRows.each(function () {
+					var row = $(this);
+					var pricePerItem = parseFloat(row.find('.cart_price').text().replace(' FCFA', ''));
+					var quantity = parseInt(row.find('.cart_quantity_input').val());
+					var total = pricePerItem * quantity;
+					row.find('.cart_total_price').text(total + ' FCFA');
+					cartTotal += total;
+				});
+	
+				$('#cart_total').text(cartTotal + ' FCFA');
+			}
+	
 			// Function to populate the cart with data from the server
 			function populateCart(userId, token) {
-				// Make a Fetch API request to fetch the user's cart data
 				fetch(`http://localhost:3000/api/carts/find/${userId}`, {
 					headers: {
 						Authorization: `Bearer ${token}`
@@ -499,12 +412,9 @@
 					return response.json();
 				})
 				.then(function (data) {
-					// Clear the existing cart items
 					$('.cart_row').remove();
-
-					// Check if data.products exists
+	
 					if (data.products) {
-						// Loop through the retrieved products and add each product to the cart table
 						data.products.forEach(function (product) {
 							var newRow = $('<tr class="cart_row" data-product-id="' + product.productId + '">');
 							newRow.html(
@@ -534,11 +444,9 @@
 							);
 							$('.cart_info table tbody').append(newRow);
 						});
-
-						// Update cart item totals
+	
 						updateCartItemTotal();
 					} else {
-						// Handle the case where data.products is missing or empty
 						console.error('Invalid or empty cart data:', data);
 					}
 				})
@@ -547,56 +455,52 @@
 				});
 			}
 
-
-			// Get the user ID and token from localStorage
 			const userId = localStorage.getItem('userId');
 			const token = localStorage.getItem('token');
 
-			// Log the retrieved User ID and token (for debugging)
 			console.log('User ID:', userId);
 			console.log('Token:', token);
-
-			// Check if userId is defined before calling populateCart
 			if (userId && token) {
 				populateCart(userId, token);
 			}
-    
-            // Update cart item totals on page load
-            updateCartItemTotal();
-    
-            // Increment quantity
-            $('.cart_quantity_up').click(function (e) {
-                e.preventDefault(); // Prevent the default link behavior
-                var input = $(this).siblings('.cart_quantity_input');
-                var quantity = parseInt(input.val()) + 1;
-                input.val(quantity);
-                updateCartItemTotal();
-            });
-    
-            // Decrement quantity
-            $('.cart_quantity_down').click(function (e) {
-                e.preventDefault(); // Prevent the default link behavior
-                var input = $(this).siblings('.cart_quantity_input');
-                var quantity = parseInt(input.val()) - 1;
-                if (quantity < 1) {
-                    quantity = 1;
-                }
-                input.val(quantity);
-                updateCartItemTotal();
-            });
-    
-            // Handle quantity input changes
-            $('.cart_quantity_input').on('input', function () {
-                var input = $(this);
-                var quantity = parseInt(input.val());
-                if (isNaN(quantity) || quantity < 1) {
-                    quantity = 1;
-                }
-                input.val(quantity);
-                updateCartItemTotal();
-            });
-        });
-    </script>
+	
+			// Update cart item totals on page load
+			updateCartItemTotal();
+	
+			// Increment quantity
+			$('.cart_quantity_up').click(function (e) {
+				e.preventDefault(); // Prevent the default link behavior
+				var input = $(this).siblings('.cart_quantity_input');
+				var quantity = parseInt(input.val()) + 1;
+				input.val(quantity);
+				updateCartItemTotal();
+			});
+	
+			// Decrement quantity
+			$('.cart_quantity_down').click(function (e) {
+				e.preventDefault(); // Prevent the default link behavior
+				var input = $(this).siblings('.cart_quantity_input');
+				var quantity = parseInt(input.val()) - 1;
+				if (quantity < 1) {
+					quantity = 1;
+				}
+				input.val(quantity);
+				updateCartItemTotal();
+			});
+	
+			// Handle quantity input changes
+			$('.cart_quantity_input').on('input', function () {
+				var input = $(this);
+				var quantity = parseInt(input.val());
+				if (isNaN(quantity) || quantity < 1) {
+					quantity = 1;
+				}
+				input.val(quantity);
+				updateCartItemTotal();
+			});
+		});
+	</script>
+	
 
 
 </body>

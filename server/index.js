@@ -10,6 +10,7 @@ const orderRoute = require("./routes/order");
 const stripeRoute = require("./routes/stripe");
 const cors = require("cors");
 const Product = require("./models/Product");
+const momoRoutes = require("./routes/momo");
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
 app.use("/api/checkout", stripeRoute);
+app.use("api/momo", momoRoutes);
 
 app.get("/search/:key", async (req, res) => {
   try{

@@ -2,19 +2,32 @@ const mongoose = require("mongoose");
 
 const CartSchema = new mongoose.Schema(
   {
-    userId: { type: String, required: true },
+    userId: { 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: 'User',
+      required: true 
+    },
     products: [
       {
         productId: {
           type: mongoose.Schema.Types.ObjectId,
-          ref: 'Product'
+          ref: 'Product',
+          required: true
         },
         quantity: {
           type: Number,
           default: 1,
+          validate: {
+            validator: v => v > 0,
+            message: 'Quantity must be greater than zero'
+          }
         },
       },
     ],
+    totalPrice: {
+      type: Number,
+      default: 0
+    }
   },
   { timestamps: true }
 );
