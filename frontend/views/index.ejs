@@ -250,19 +250,19 @@
 								<div class="single-products">
 									<div class="productinfo text-center">
 										<img src="images/home/7.png" alt="" />
-										<h2>200 FCFA</h2>
+										<h2>1500</h2>
 										<p>Flavorful African Grilled Delights</p>
 										<a href="#" class="btn btn-default add-to-cart"
-										   data-product-id="123">
+										   data-product-id="64ec1d08dc25efa900d19fa2">
 											<i class="fa fa-shopping-cart"></i>Add to cart
 										</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>200 FCFA</h2>
+											<h2>1500</h2>
 											<p>Flavorful African Grilled Delights</p>
 											<a href="#" class="btn btn-default add-to-cart"
-											   data-product-id="124">
+											   data-product-id="64ec1d08dc25efa900d19fa2">
 												<i class="fa fa-shopping-cart"></i>Add to cart
 											</a>
 										</div>
@@ -935,6 +935,7 @@
 				event.preventDefault(); 
 	
 				const productId = link.getAttribute("data-product-id");
+				const price = parseFloat(link.parentElement.querySelector("h2").textContent.replace(" FCFA", ""));
 				const quantity = 1;
 
 				const token = localStorage.getItem("token");
@@ -943,6 +944,7 @@
 				const productInfo = {
 					productId: productId,
 					quantity: quantity,
+					price: price,
 					userId: userId
 				};
 	

@@ -414,6 +414,9 @@
 				.then(function (data) {
 					$('.cart_row').remove();
 	
+					// Log the fetched cart data
+					console.log('Fetched cart data:', data);
+	
 					if (data.products) {
 						data.products.forEach(function (product) {
 							var newRow = $('<tr class="cart_row" data-product-id="' + product.productId + '">');
@@ -439,7 +442,7 @@
 								'<p class="cart_total_price">' + (product.price * product.quantity) + ' FCFA</p>' +
 								'</td>' +
 								'<td class="cart_delete">' +
-								'<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>' +
+								'<a class "cart_quantity_delete" href=""><i class="fa fa-times"></i></a>' +
 								'</td>'
 							);
 							$('.cart_info table tbody').append(newRow);
@@ -454,12 +457,13 @@
 					console.error('Error fetching cart data:', error);
 				});
 			}
-
+	
 			const userId = localStorage.getItem('userId');
 			const token = localStorage.getItem('token');
-
+	
 			console.log('User ID:', userId);
 			console.log('Token:', token);
+	
 			if (userId && token) {
 				populateCart(userId, token);
 			}
@@ -500,6 +504,8 @@
 			});
 		});
 	</script>
+	
+	
 	
 
 
