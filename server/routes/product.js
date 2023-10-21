@@ -6,11 +6,47 @@ const {
 } = require("./verifyToken");
 
 const router = require("express").Router();
+const multer = require('multer');
+
+// Multer Configuration
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads/'); 
+  },
+  filename: function (req, file, cb) {
+    cb(null, new Date().toISOString().replace(/:/g, '-') + file.originalname);
+  }
+});
+
+const fileFilter = (req, file, cb) => {
+  // Check the file type and accept only certain types (e.g., JPEG and PNG).
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
+    cb(null, true); 
+  } else {
+    cb(null, false); 
+  }
+};
+
+const upload = multer({
+  storage: storage,
+  limits: {
+    fileSize: 1024 * 1024 * 5 
+  },
+  fileFilter: fileFilter
+});
+
 
 //CREATE
 
-router.post("/", verifyTokenAndAdmin, async (req, res) => {
-  const newProduct = new Product(req.body);
+router.post("/", verifyTokenAndAdmin, upload.single('productImage'), async (req, res) => {
+  const newProduct = new Product({
+    title: req.body.title,
+    desc: req.body.desc,
+    categories: req.body.categories,
+    price: req.body.price,
+    productImage: req.file.path,
+    productID: req.body.productID
+  });
 
   try {
     const savedProduct = await newProduct.save();
